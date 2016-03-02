@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/yadutaf/go-ovh"
+	"github.com/docker/machine/libmachine/log"
 )
 
 const (
@@ -112,7 +113,8 @@ func (a *API) GetProjects() (projects Projects, err error) {
 	if err != nil {
 		return nil, err
 	}
-
+       
+        log.Debug("my validating project")
 	err = json.Unmarshal(res.Body, &projects)
 	if err != nil {
 		return nil, err
