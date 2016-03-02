@@ -114,7 +114,7 @@ func (a *API) GetProjects() (projects Projects, err error) {
 		return nil, err
 	}
        
-        log.Debug("my validating project")
+        log.Debug("my validating project - ", res)
 	err = json.Unmarshal(res.Body, &projects)
 	if err != nil {
 		return nil, err
